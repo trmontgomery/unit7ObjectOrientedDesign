@@ -7,10 +7,9 @@ import java.awt.Color;
 
 public class Triangle
 {
-    
-    
     public Triangle()
     {
+        
     }
     
     public void draw(Graphics2D g2)
