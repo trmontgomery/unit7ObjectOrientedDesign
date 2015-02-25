@@ -55,16 +55,17 @@ public class Shuffler {
         for (int j = 0; j < (values.length +1)/2; j++)
         {
             shuffled[k] = values[j];
-            k = k+2;
+            k = k + 2;
         }
         
         k = 1;
-        for (int j = (values.length +1)/2; j < 52; j++)
+        for (int j = (values.length +1)/2; j < values.length; j++)
         {
             shuffled[k] = values[j];
-            k = k +2;
+            k = k + 2;
         }
         
+        values = shuffled;
     }
 
     /**
@@ -80,9 +81,15 @@ public class Shuffler {
      */
     public static void selectionShuffle(int[] values) {
         int[] shuffled = new int[52];
-        for (int k = 0; k < 52; k++)
+        int r = 0;
+        int temp = 0;
+        for (int k = values.length - 1; k >= 0; k--)
         {
-            
+            r = (int)(Math.random() * k);
+            temp = values[k];
+            values[k] = values[r];
+            values[r] = temp;
         }
+        
     }
 }
